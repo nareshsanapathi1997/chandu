@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { motion, useReducedMotion, useScroll, useSpring } from 'framer-motion';
 import {
-  ArrowRight, ArrowUpRight, BadgeCheck, Check, Clock3, MapPin, Menu,
+  ArrowRight, ArrowUpRight, Check, Clock3, MapPin, Menu,
   MessageCircle, Phone, Search, Send, ShieldCheck, Sparkles,
   Sun, Moon, Wrench, X, Zap,
 } from 'lucide-react';
@@ -93,7 +93,7 @@ function App() {
       const saved = localStorage.getItem('cmc-theme');
       if (saved === 'dark' || saved === 'light') return saved;
     } catch {}
-    return window.matchMedia?.('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    return 'dark';
   });
   useEffect(() => {
     document.documentElement.dataset.theme = theme;
@@ -125,35 +125,35 @@ function App() {
       <Header theme={theme} onToggleTheme={() => setTheme((current) => current === 'dark' ? 'light' : 'dark')} />
       <main>
         <section className="hero" id="home">
-          <div className="hero-grid" />
-          <div className="container hero-inner">
-            <motion.div className="hero-copy" initial={reduceMotion ? false : { opacity: 0, y: 22 }} animate={reduceMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.7 }}>
-              <div className="status-pill"><span className="pulse" /> MOBILE SALES · ACCESSORIES · REPAIRS</div>
-              <h1>Everything your<br />phone needs. <span>All in one place.</span></h1>
-              <p className="hero-desc">Looking for a mobile shop or phone repair in Lankelapalem? Find mobiles, model-matched accessories and spare parts at Chandu Mobile Care on Sabbavaram Road. Ask about Samsung, vivo, OPPO, Redmi, realme, OnePlus and iPhone.</p>
+          <div className="container hero-layout">
+            <motion.div className="hero-copy" initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={reduceMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+              <p className="hero-kicker"><span className="pulse" /> Cell phone store in Lankelapalem</p>
+              <h1>Phones, accessories and repairs. <span>On Sabbavaram Road.</span></h1>
+              <p className="hero-desc">Chandu Mobile Care is the shop with the blue and red board. Buy a Samsung, vivo, OPPO, Redmi, realme, OnePlus or iPhone, pick up a case and charger, or get the phone you already own repaired.</p>
+              <ul className="hero-points">
+                <li><Phone size={16} /> New and pre-owned phones</li>
+                <li><ShieldCheck size={16} /> Glass, cases and chargers fitted here</li>
+                <li><Wrench size={16} /> Screen, battery and charging repairs</li>
+              </ul>
               <div className="hero-buttons">
-                <a className="btn btn-primary" href="#products">See models & examples <ArrowUpRight size={17} /></a>
-                <WhatsAppLink className="btn btn-outline" message="Hi! I would like to know which phones are available at Chandu Mobile Care today."><MessageCircle size={17} /> WhatsApp us</WhatsAppLink>
+                <a className="btn btn-primary" href={`tel:+91${PHONE}`}><Phone size={17} /> Call {PHONE_PRETTY}</a>
+                <WhatsAppLink className="btn btn-outline" message="Hi Chandu Mobile Care, I would like to know what is available today."><MessageCircle size={17} /> WhatsApp</WhatsAppLink>
+                <a className="btn btn-outline" href="#products">See models <ArrowUpRight size={17} /></a>
               </div>
-              <div className="hero-trust">
-                <div className="trust-avatars"><span>C</span><span>M</span><span>✓</span></div>
-                <div><b>Local mobile care, made easy</b><small>Sabbavaram Road, Lankelapalem</small></div>
-                <div className="trust-divider" />
-                <div className="trust-mini"><ShieldCheck size={18} /><span>Model-matched<br />parts & advice</span></div>
-              </div>
+              <a className="hero-address" href={MAP} target="_blank" rel="noreferrer">
+                <span className="hero-pin"><MapPin size={18} /></span>
+                <span><b>8-82, Sabbavaram Road</b><small>Lankelapalem, Visakhapatnam 531019 · Open directions</small></span>
+                <ArrowUpRight size={16} />
+              </a>
             </motion.div>
-            <motion.div className="hero-visual" initial={reduceMotion ? false : { opacity: 0, scale: 0.94 }} animate={reduceMotion ? undefined : { opacity: 1, scale: 1 }} transition={{ duration: 0.8, delay: 0.15 }}>
-              <motion.div className="hero-orbit orbit-one" aria-hidden="true" animate={reduceMotion ? undefined : { rotate: [-25, -20, -25], scale: [1, 1.035, 1] }} transition={{ duration: 18, repeat: Infinity, ease: 'easeInOut' }} />
-              <motion.div className="hero-orbit orbit-two" aria-hidden="true" animate={reduceMotion ? undefined : { rotate: [35, 28, 35], scale: [1, 0.97, 1] }} transition={{ duration: 23, repeat: Infinity, ease: 'easeInOut' }} />
-              <motion.div className="hero-glow" aria-hidden="true" animate={reduceMotion ? undefined : { opacity: [0.55, 0.9, 0.55], scale: [0.96, 1.06, 0.96] }} transition={{ duration: 7, repeat: Infinity, ease: 'easeInOut' }} />
-              <motion.img className="hero-phone" src="/images/hero-phone.jpg" alt="Smartphone with a lit lock screen" animate={reduceMotion ? undefined : { y: [0, -10, 0], rotate: [7, 5.5, 7] }} transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }} />
-              <motion.div className="float-card float-top" animate={reduceMotion ? undefined : { y: [0, -6, 0] }} transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}><span className="float-icon"><Sparkles size={17} /></span><div><b>Sales, spares and service</b><small>One counter in Lankelapalem</small></div></motion.div>
-              <motion.div className="float-card float-bottom" animate={reduceMotion ? undefined : { y: [0, 7, 0] }} transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: 0.5 }}><span className="float-icon green"><BadgeCheck size={18} /></span><div><b>Send the model name</b><small>We reply with stock and price</small></div><ArrowUpRight size={17} /></motion.div>
-              <motion.span className="hero-orbit-dot dot-one" aria-hidden="true" animate={reduceMotion ? undefined : { rotate: 360 }} transition={{ duration: 24, repeat: Infinity, ease: 'linear' }} />
-              <motion.span className="hero-orbit-dot dot-two" aria-hidden="true" animate={reduceMotion ? undefined : { y: [0, -8, 0], opacity: [0.4, 1, 0.4] }} transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut' }} />
-            </motion.div>
+            <motion.figure className="hero-shop" initial={reduceMotion ? false : { opacity: 0, y: 18 }} animate={reduceMotion ? undefined : { opacity: 1, y: 0 }} transition={{ duration: 0.7, delay: 0.1 }}>
+              <img src="/images/shop-front.jpg" alt="Chandu Mobile Care storefront on Sabbavaram Road, next to Ayappa Kirana" />
+              <figcaption>
+                <b>Chandu Mobile Care</b>
+                <span>Look for the board beside Ayappa Kirana</span>
+              </figcaption>
+            </motion.figure>
           </div>
-          <div className="hero-bottom container"><span>SCROLL TO DISCOVER</span><div className="scroll-line" /><span className="hero-location"><MapPin size={14} /> Sabbavaram Road, Lankelapalem</span></div>
         </section>
 
         <section className="brand-strip">
