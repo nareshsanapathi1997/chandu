@@ -1,0 +1,28 @@
+# Chandu Mobile Care
+
+> Chandu Mobile Care is a mobile phone shop and repair service enquiry point on Sabbavaram Road in Lankelapalem, Visakhapatnam, Andhra Pradesh, India.
+
+## Business details
+- Phone and WhatsApp: +91 70368 59233
+- Address: 8-82, Sabbavaram Road, Lankelapalem, Visakhapatnam, Andhra Pradesh 531019
+- Google Maps: https://www.google.com/maps/place/CHANDU+MOBILE+CARE/@17.688256,83.096552,17z/
+- Brands shown on the website: Apple, Samsung, vivo, OPPO, OnePlus, Redmi and realme
+
+## Products and services
+- Smartphones, mobile accessories, spare parts and repair enquiries
+- Accessories include cases, tempered glass, chargers, cables, earbuds and headphones
+- Repair topics include display and touch, batteries, charging and audio, software, cameras, hardware and water damage
+- Product examples on the website are illustrative. Stock, colour, specifications and prices can change; contact the shop to confirm current availability.
+- Repair work and estimates should be confirmed directly with the shop for the exact device model and fault.
+
+## Website sections
+- [Mobile catalogue](/#products)
+- [Repair and support](/#services)
+- [Example repair enquiries](/#examples)
+- [Shop photos](/#gallery)
+- [Contact and directions](/#contact)
+
+## Contact
+- [Call +91 70368 59233](tel:+917036859233)
+- [WhatsApp Chandu Mobile Care](https://wa.me/917036859233)
+- [Open Google Maps](https://www.google.com/maps/place/CHANDU+MOBILE+CARE/@17.688256,83.096552,17z/)

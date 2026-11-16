@@ -1,0 +1,18 @@
+{
+  "name": "Chandu Mobile Care",
+  "short_name": "Chandu Care",
+  "description": "Mobiles, accessories, spare parts and repair enquiries in Lankelapalem.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#080b14",
+  "theme_color": "#080b14",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}
